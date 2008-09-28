@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = 8D5B49AC048680CD000E48DA /* SortByLogSizePlugin */;
+		addToTargets = (
+			8D5B49AC048680CD000E48DA /* SortByLogSizePlugin */,
+		);
+		codeSenseManager = FC880A0C0E8FF7640064FEBE /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					492,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					452,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 244320014;
+			PBXWorkspaceStateSaveDate = 244320014;
+		};
+		perUserProjectItems = {
+			FCB319800E8FF8EB00D88232 /* PBXTextBookmark */ = FCB319800E8FF8EB00D88232 /* PBXTextBookmark */;
+			FCB319830E8FF8EB00D88232 /* PBXTextBookmark */ = FCB319830E8FF8EB00D88232 /* PBXTextBookmark */;
+			FCB319840E8FF8EB00D88232 /* PBXTextBookmark */ = FCB319840E8FF8EB00D88232 /* PBXTextBookmark */;
+			FCB31A090E8FFC7B00D88232 /* PBXTextBookmark */ = FCB31A090E8FFC7B00D88232 /* PBXTextBookmark */;
+			FCB31A0D0E8FFC7B00D88232 /* PBXTextBookmark */ = FCB31A0D0E8FFC7B00D88232 /* PBXTextBookmark */;
+			FCB31A800E8FFD6200D88232 /* PBXTextBookmark */ = FCB31A800E8FFD6200D88232 /* PBXTextBookmark */;
+			FCB31A810E8FFD6200D88232 /* PBXTextBookmark */ = FCB31A810E8FFD6200D88232 /* PBXTextBookmark */;
+			FCB31AA90E9001E700D88232 /* PBXTextBookmark */ = FCB31AA90E9001E700D88232 /* PBXTextBookmark */;
+			FCB31AAA0E9001E700D88232 /* PBXTextBookmark */ = FCB31AAA0E9001E700D88232 /* PBXTextBookmark */;
+			FCB31D7F0E90072D00D88232 /* PBXTextBookmark */ = FCB31D7F0E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D810E90072D00D88232 /* PBXTextBookmark */ = FCB31D810E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D830E90072D00D88232 /* PBXTextBookmark */ = FCB31D830E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D850E90072D00D88232 /* PBXTextBookmark */ = FCB31D850E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D860E90072D00D88232 /* PBXTextBookmark */ = FCB31D860E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D870E90072D00D88232 /* PBXTextBookmark */ = FCB31D870E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D890E90072D00D88232 /* PBXTextBookmark */ = FCB31D890E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D8B0E90072D00D88232 /* PBXTextBookmark */ = FCB31D8B0E90072D00D88232 /* PBXTextBookmark */;
+			FCB31D940E9007A200D88232 /* PBXTextBookmark */ = FCB31D940E9007A200D88232 /* PBXTextBookmark */;
+		};
+		sourceControlManager = FC880A0B0E8FF7640064FEBE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D5B49AC048680CD000E48DA /* SortByLogSizePlugin */ = {
+		activeExec = 0;
+	};
+	8D5B49B7048680CD000E48DA /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{65, 273}, {750, 558}}";
+		};
+	};
+	FC880A0B0E8FF7640064FEBE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryName = SortByLogSizePlugin;
+		};
+	};
+	FC880A0C0E8FF7640064FEBE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {670, 444}}";
+			sepNavSelRange = "{128, 0}";
+			sepNavVisRange = "{0, 261}";
+			sepNavWindowFrame = "{{19, 315}, {750, 558}}";
+		};
+	};
+	FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {670, 686}}";
+			sepNavSelRange = "{354, 0}";
+			sepNavVisRange = "{0, 599}";
+			sepNavWindowFrame = "{{42, 294}, {750, 558}}";
+		};
+	};
+	FCB319800E8FF8EB00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319810E8FF8EB00D88232 /* ABMyTestPlugin.h */;
+		name = "ABMyTestPlugin.h: 13";
+		rLen = 0;
+		rLoc = 242;
+		rType = 0;
+		vrLen = 251;
+		vrLoc = 0;
+	};
+	FCB319810E8FF8EB00D88232 /* ABMyTestPlugin.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ABMyTestPlugin.h;
+		path = /Users/jon/src/AdiumTestPlugin/ABMyTestPlugin.h;
+		sourceTree = "<absolute>";
+	};
+	FCB319830E8FF8EB00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */;
+		name = "ABSortByLogSizePlugin.h: 12";
+		rLen = 0;
+		rLoc = 216;
+		rType = 0;
+		vrLen = 267;
+		vrLoc = 0;
+	};
+	FCB319840E8FF8EB00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319850E8FF8EB00D88232 /* ABMyTestPlugin.h */;
+		name = "ABMyTestPlugin.h: 13";
+		rLen = 0;
+		rLoc = 242;
+		rType = 0;
+		vrLen = 251;
+		vrLoc = 0;
+	};
+	FCB319850E8FF8EB00D88232 /* ABMyTestPlugin.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ABMyTestPlugin.h;
+		path = /Users/jon/src/AdiumTestPlugin/ABMyTestPlugin.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31A090E8FFC7B00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31A0A0E8FFC7B00D88232 /* ABMyTestPlugin.m */;
+		name = "ABMyTestPlugin.m: 14";
+		rLen = 407;
+		rLoc = 212;
+		rType = 0;
+		vrLen = 225;
+		vrLoc = 401;
+	};
+	FCB31A0A0E8FFC7B00D88232 /* ABMyTestPlugin.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = ABMyTestPlugin.m;
+		path = /Users/jon/src/AdiumTestPlugin/ABMyTestPlugin.m;
+		sourceTree = "<absolute>";
+	};
+	FCB31A0D0E8FFC7B00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31A0E0E8FFC7B00D88232 /* ABMyTestPlugin.m */;
+		name = "ABMyTestPlugin.m: 14";
+		rLen = 407;
+		rLoc = 212;
+		rType = 0;
+		vrLen = 225;
+		vrLoc = 401;
+	};
+	FCB31A0E0E8FFC7B00D88232 /* ABMyTestPlugin.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = ABMyTestPlugin.m;
+		path = /Users/jon/src/AdiumTestPlugin/ABMyTestPlugin.m;
+		sourceTree = "<absolute>";
+	};
+	FCB31A800E8FFD6200D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */;
+		name = "ABSortByLogSizePlugin.m: 11";
+		rLen = 0;
+		rLoc = 354;
+		rType = 0;
+		vrLen = 498;
+		vrLoc = 0;
+	};
+	FCB31A810E8FFD6200D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31A820E8FFD6200D88232 /* AIDebugControllerProtocol.h */;
+		name = "AIDebugControllerProtocol.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 318;
+		vrLoc = 0;
+	};
+	FCB31A820E8FFD6200D88232 /* AIDebugControllerProtocol.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = AIDebugControllerProtocol.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/AIDebugControllerProtocol.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31A980E8FFFC400D88232 /* AIDebugControllerProtocol.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = AIDebugControllerProtocol.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/AIDebugControllerProtocol.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31AA90E9001E700D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31A980E8FFFC400D88232 /* AIDebugControllerProtocol.h */;
+		name = "AIDebugControllerProtocol.h: 13";
+		rLen = 0;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 318;
+		vrLoc = 0;
+	};
+	FCB31AAA0E9001E700D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */;
+		name = "ABSortByLogSizePlugin.h: 6";
+		rLen = 0;
+		rLoc = 128;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 0;
+	};
+	FCB31D7F0E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D800E90072D00D88232 /* AIAccountControllerProtocol.h */;
+		name = "AIAccountControllerProtocol.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 0;
+	};
+	FCB31D800E90072D00D88232 /* AIAccountControllerProtocol.h */ = {
+		isa = PBXFileReference;
+		name = AIAccountControllerProtocol.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/AIAccountControllerProtocol.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D810E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D820E90072D00D88232 /* ESContactAlertsViewController.h */;
+		name = "ESContactAlertsViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1366;
+		vrLoc = 0;
+	};
+	FCB31D820E90072D00D88232 /* ESContactAlertsViewController.h */ = {
+		isa = PBXFileReference;
+		name = ESContactAlertsViewController.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/ESContactAlertsViewController.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D830E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D840E90072D00D88232 /* ESDebugAILog.h */;
+		name = "ESDebugAILog.h: 20";
+		rLen = 18;
+		rLoc = 1011;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 0;
+	};
+	FCB31D840E90072D00D88232 /* ESDebugAILog.h */ = {
+		isa = PBXFileReference;
+		name = ESDebugAILog.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/ESDebugAILog.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D850E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */;
+		name = "ABSortByLogSizePlugin.m: 15";
+		rLen = 0;
+		rLoc = 353;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 0;
+	};
+	FCB31D860E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */;
+		name = "ABSortByLogSizePlugin.m: 15";
+		rLen = 0;
+		rLoc = 353;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 0;
+	};
+	FCB31D870E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D880E90072D00D88232 /* AIAccountControllerProtocol.h */;
+		name = "AIAccountControllerProtocol.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 0;
+	};
+	FCB31D880E90072D00D88232 /* AIAccountControllerProtocol.h */ = {
+		isa = PBXFileReference;
+		name = AIAccountControllerProtocol.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/AIAccountControllerProtocol.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D890E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D8A0E90072D00D88232 /* ESContactAlertsViewController.h */;
+		name = "ESContactAlertsViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1366;
+		vrLoc = 0;
+	};
+	FCB31D8A0E90072D00D88232 /* ESContactAlertsViewController.h */ = {
+		isa = PBXFileReference;
+		name = ESContactAlertsViewController.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/ESContactAlertsViewController.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D8B0E90072D00D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB31D8C0E90072D00D88232 /* ESDebugAILog.h */;
+		name = "ESDebugAILog.h: 20";
+		rLen = 18;
+		rLoc = 1011;
+		rType = 0;
+		vrLen = 1364;
+		vrLoc = 0;
+	};
+	FCB31D8C0E90072D00D88232 /* ESDebugAILog.h */ = {
+		isa = PBXFileReference;
+		name = ESDebugAILog.h;
+		path = /Users/jon/src/SortByLogSizePlugin/Adium.framework/Headers/ESDebugAILog.h;
+		sourceTree = "<absolute>";
+	};
+	FCB31D940E9007A200D88232 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */;
+		name = "ABSortByLogSizePlugin.m: 16";
+		rLen = 0;
+		rLoc = 354;
+		rType = 0;
+		vrLen = 599;
+		vrLoc = 0;
+	};
+}
