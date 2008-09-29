@@ -9,11 +9,10 @@
 #import "AILogSizeSort.h"
 #import "AILoggerPlugin.h"
 
+#import <Adium/AISharedAdium.h>
+
 #import <AIUtilities/AITigerCompatibility.h> 
 #import <AIUtilities/AIStringUtilities.h>
-
-#import <Adium/AISharedAdium.h>
-#import <Adium/ESDebugAILog.h>
 
 #import <Adium/AIContactControllerProtocol.h>
 #import <Adium/AIListObject.h>
@@ -181,10 +180,12 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 	
 	if([sizeB compare:sizeA] == NSOrderedSame)
 	{
+		// Fall back to basic alphabetical sorting in the event of a tie.
 		return [[objectA displayName] caseInsensitiveCompare:[objectB displayName]];
 	}
 	else
 	{
+		// There's a clear winner; run with it.
 		return [sizeB compare:sizeA];
 	}
 }

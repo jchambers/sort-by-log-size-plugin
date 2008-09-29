@@ -14,7 +14,6 @@
 
 #import <AIUtilities/AITigerCompatibility.h> 
 
-#import <Adium/ESDebugAILog.h>
 #import <Adium/AISharedAdium.h>
 #import <Adium/AIContactControllerProtocol.h>
 
@@ -22,13 +21,11 @@
 
 - (void)installPlugin
 {
-	AILog(@"ABSortByLogSizePlugin installed.");
 	[[adium contactController] registerListSortController:[[[AILogSizeSort alloc] init] autorelease]];
 }
 
 - (void)uninstallPlugin 
 {
-	AILog(@"ABSortByLogSizePlugin uninstalled.");
 }
 
 - (NSString *)pluginAuthor
@@ -38,7 +35,7 @@
 
 - (NSString *)pluginVersion
 {
-	return @"development";
+	return @"1.0";
 }
 
 - (NSString *)pluginDescription
