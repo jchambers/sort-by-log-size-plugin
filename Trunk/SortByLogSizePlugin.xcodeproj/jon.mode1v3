@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>FC1985D90E9067860021C71E</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>AILogSizeSort.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>FC1985DA0E9067860021C71E</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>AILogSizeSort.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>FC1986670E907A980021C71E</string>
-						<key>history</key>
-						<array>
-							<string>FC1985CD0E9067810021C71E</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {750, 461}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>111 287 750 502 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -377,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FC1986660E907A980021C71E</string>
+										<string>FC1986940E9085C50021C71E</string>
 										<key>history</key>
 										<array>
 											<string>FCB319800E8FF8EB00D88232</string>
@@ -386,21 +345,24 @@
 											<string>FCB31D7F0E90072D00D88232</string>
 											<string>FCB31D810E90072D00D88232</string>
 											<string>FCB31D830E90072D00D88232</string>
-											<string>FC1983610E900B130021C71E</string>
 											<string>FC1983BE0E9016AA0021C71E</string>
 											<string>FC1984D60E904FF10021C71E</string>
 											<string>FC1984D80E904FF10021C71E</string>
 											<string>FC1985150E9055000021C71E</string>
-											<string>FC1985340E90578B0021C71E</string>
 											<string>FC1985440E905A7B0021C71E</string>
 											<string>FC1985B60E9067150021C71E</string>
 											<string>FC1985CF0E9067860021C71E</string>
 											<string>FC1985D00E9067860021C71E</string>
 											<string>FC19863F0E9074430021C71E</string>
-											<string>FC1986400E9074430021C71E</string>
 											<string>FC1986410E9074430021C71E</string>
 											<string>FC19864E0E9077BD0021C71E</string>
-											<string>FC19864F0E9077BD0021C71E</string>
+											<string>FC1986690E907D5E0021C71E</string>
+											<string>FC19866B0E907D5E0021C71E</string>
+											<string>FC19866D0E907D5E0021C71E</string>
+											<string>FC19866F0E907D5E0021C71E</string>
+											<string>FC1986700E907D5E0021C71E</string>
+											<string>FC19868D0E9083CF0021C71E</string>
+											<string>FC19868E0E9083CF0021C71E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -456,6 +418,17 @@
 											<string>FC1986460E9074430021C71E</string>
 											<string>FC1986500E9077BD0021C71E</string>
 											<string>FC1986510E9077BD0021C71E</string>
+											<string>FC1986720E907D5E0021C71E</string>
+											<string>FC1986730E907D5E0021C71E</string>
+											<string>FC1986750E907D5E0021C71E</string>
+											<string>FC1986770E907D5E0021C71E</string>
+											<string>FC1986790E907D5E0021C71E</string>
+											<string>FC19867A0E907D5E0021C71E</string>
+											<string>FC19867B0E907D5E0021C71E</string>
+											<string>FC19867C0E907D5E0021C71E</string>
+											<string>FC19867D0E907D5E0021C71E</string>
+											<string>FC19868F0E9083CF0021C71E</string>
+											<string>FC1986900E9083CF0021C71E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -650,7 +623,6 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>FCB31A100E8FFC7B00D88232</string>
-		<string>FC1985D90E9067860021C71E</string>
 		<string>/Users/jon/src/SortByLogSizePlugin/SortByLogSizePlugin.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

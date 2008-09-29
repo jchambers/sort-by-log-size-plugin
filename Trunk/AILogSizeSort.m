@@ -29,28 +29,6 @@
  */
 - (void)didBecomeActiveFirstTime
 {
-	logSizeCache = [NSMutableDictionary dictionaryWithCapacity:64];
-	
-	NSEnumerator *groupEnumerator = [[[[adium contactController] contactList] listContacts] objectEnumerator];
-	
-	id group, contact;
-	
-    while(group = [groupEnumerator nextObject])
-	{
-		NSEnumerator *contactEnumerator = [[group listContacts] objectEnumerator];
-		
-		NSMutableDictionary *sizes = [NSMutableDictionary dictionaryWithCapacity:64];
-		
-		while(contact = [contactEnumerator nextObject])
-		{
-			[sizes setValue:[NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:contact]] forKey:[contact UID]];
-		}
-
-		[logSizeCache setValue:sizes forKey:[group UID]];
-    }
-	
-	AILog(@"Log size cache:");
-	AILog(@"%@", logSizeCache);
 }
 
 /*!
@@ -120,7 +98,31 @@
  */
 int logSizeSort(id objectA, id objectB, BOOL groups)
 {
-	return NSOrderedAscending;
+	if(groups)
+	{
+		// Keep groups in manual order (borrowed from ESStatusSort)
+		if ([objectA orderIndex] > [objectB orderIndex])
+		{
+			return NSOrderedDescending;
+		}
+		else
+		{
+			return NSOrderedAscending;
+		}
+	}
+	
+	
+	NSNumber *sizeA = [NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:objectA]];
+	NSNumber *sizeB = [NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:objectB]];
+	
+	if([sizeB compare:sizeA] == NSOrderedSame)
+	{
+		return [[objectA displayName] compare:[objectB displayName]];
+	}
+	else
+	{
+		return [sizeB compare:sizeA];
+	}
 }
 
 /*!
