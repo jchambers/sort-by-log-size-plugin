@@ -6,11 +6,15 @@
 //  Copyright 2008 Jon Chambers. All rights reserved.
 //
 
+#import <AIUtilities/AITigerCompatibility.h> 
+
 #import <Adium/AISortController.h>
+#import <Adium/AIListContact.h>
 
 @interface AILogSizeSort : AISortController
 {
-
 }
+
++(unsigned long long)getContactLogSize:(AIListContact *)listObject;
 
 @end

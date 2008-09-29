@@ -7,13 +7,18 @@
 //
 
 #import "AILogSizeSort.h"
+#import "AILoggerPlugin.h"
 
 #import <AIUtilities/AITigerCompatibility.h> 
 #import <AIUtilities/AIStringUtilities.h>
+
+#import <Adium/AISharedAdium.h>
+#import <Adium/ESDebugAILog.h>
+
 #import <Adium/AIContactControllerProtocol.h>
 #import <Adium/AIPreferenceControllerProtocol.h>
-#import <AIUtilities/AIDictionaryAdditions.h>
 #import <Adium/AIListObject.h>
+#import <Adium/AIMetaContact.h>
 
 @implementation AILogSizeSort
 
@@ -24,6 +29,21 @@
  */
 - (void)didBecomeActiveFirstTime
 {
+	NSEnumerator *groupEnumerator = [[[[adium contactController] contactList] listContacts] objectEnumerator];
+	
+	id group, contact;
+	
+    while(group = [groupEnumerator nextObject])
+	{
+		AILog(@"%@", group);
+		
+		NSEnumerator *contactEnumerator = [[group listContacts] objectEnumerator];
+		
+		while(contact = [contactEnumerator nextObject])
+		{
+			AILog(@"\t%@: %lld", contact, [AILogSizeSort getContactLogSize:contact]);
+		}
+    }
 }
 
 /*!
@@ -91,8 +111,11 @@
 /*!
  * @brief Alphabetical sort
  */
-int alphabeticalSort(id objectA, id objectB, BOOL groups)
+int logSizeSort(id objectA, id objectB, BOOL groups)
 {
+	// Not real excited about doing this with an implicit definition, but seems to be
+	// the only option for now.
+	//AILog([objectA formattedUID]);
 	return NSOrderedAscending;
 }
 
@@ -100,7 +123,53 @@ int alphabeticalSort(id objectA, id objectB, BOOL groups)
  * @brief Sort function
  */
 - (sortfunc)sortFunction{
-	return &alphabeticalSort;
+	return &logSizeSort;
+}
+
++(unsigned long long)getContactLogSize:(AIListContact *)listObject
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+
+	if([listObject isMemberOfClass:[AIMetaContact class]])
+	{
+		unsigned long long size = 0;
+		
+		NSEnumerator *contactEnumerator = [[listObject listContacts] objectEnumerator];
+		
+		id contact;
+		
+		while(contact = [contactEnumerator nextObject])
+		{
+			size += [AILogSizeSort getContactLogSize:contact];
+		}
+		
+		return size;
+	}
+	else
+	{
+		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listObject UID] onAccount: [listObject account]]];
+
+		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
+		NSString *file;
+		
+		unsigned long long size = 0;
+		
+		while(file = [dirEnum nextObject])
+		{
+			NSDictionary *fileAttributes = [fileManager fileAttributesAtPath:[path stringByAppendingPathComponent:file] traverseLink:YES];
+
+			if (fileAttributes != nil)
+			{
+				NSNumber *fileSize;
+				if(fileSize = [fileAttributes objectForKey:NSFileSize])
+				{
+					size += [fileSize unsignedLongLongValue];
+				}
+			}
+		}
+		
+		return size;
+	}
 }
 
 @end

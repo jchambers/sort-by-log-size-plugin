@@ -6,7 +6,6 @@
 //  Copyright 2008 Jon Chamber. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import <Adium/AIPlugin.h>
 
 @interface ABSortByLogSizePlugin : AIPlugin

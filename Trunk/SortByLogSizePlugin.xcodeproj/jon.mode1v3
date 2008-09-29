@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>FC1985D90E9067860021C71E</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>AILogSizeSort.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>FC1985DA0E9067860021C71E</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>AILogSizeSort.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>FC19864A0E9074D70021C71E</string>
+						<key>history</key>
+						<array>
+							<string>FC1985CD0E9067810021C71E</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {750, 461}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>111 287 750 502 0 0 1440 878 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -279,7 +320,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>6</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -336,7 +377,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FC19842B0E9020140021C71E</string>
+										<string>FC1986490E9074D70021C71E</string>
 										<key>history</key>
 										<array>
 											<string>FCB319800E8FF8EB00D88232</string>
@@ -347,12 +388,19 @@
 											<string>FCB31D830E90072D00D88232</string>
 											<string>FC1983610E900B130021C71E</string>
 											<string>FC1983BE0E9016AA0021C71E</string>
-											<string>FC1983C00E9016AA0021C71E</string>
-											<string>FC1983C10E9016AA0021C71E</string>
-											<string>FC1984090E901A060021C71E</string>
-											<string>FC1984180E901CE00021C71E</string>
-											<string>FC1984280E9020140021C71E</string>
-											<string>FC1984290E9020140021C71E</string>
+											<string>FC1984D60E904FF10021C71E</string>
+											<string>FC1984D80E904FF10021C71E</string>
+											<string>FC1985150E9055000021C71E</string>
+											<string>FC1985340E90578B0021C71E</string>
+											<string>FC1985440E905A7B0021C71E</string>
+											<string>FC1985B60E9067150021C71E</string>
+											<string>FC1985CF0E9067860021C71E</string>
+											<string>FC1985D00E9067860021C71E</string>
+											<string>FC1986240E9070070021C71E</string>
+											<string>FC19863F0E9074430021C71E</string>
+											<string>FC1986400E9074430021C71E</string>
+											<string>FC1986410E9074430021C71E</string>
+											<string>FC1986420E9074430021C71E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -364,31 +412,48 @@
 											<string>FCB31D870E90072D00D88232</string>
 											<string>FCB31D890E90072D00D88232</string>
 											<string>FCB31D8B0E90072D00D88232</string>
-											<string>FC1983670E900B130021C71E</string>
 											<string>FC1983680E900B130021C71E</string>
 											<string>FC19836A0E900B130021C71E</string>
 											<string>FC19836C0E900B130021C71E</string>
-											<string>FC1983B40E9014CB0021C71E</string>
-											<string>FC1983C30E9016AA0021C71E</string>
 											<string>FC1983C40E9016AA0021C71E</string>
-											<string>FC1983C50E9016AA0021C71E</string>
-											<string>FC1983C60E9016AA0021C71E</string>
-											<string>FC1983C70E9016AA0021C71E</string>
 											<string>FC1983C80E9016AA0021C71E</string>
-											<string>FC1983CA0E9016AA0021C71E</string>
-											<string>FC1983CB0E9016AA0021C71E</string>
-											<string>FC1983DE0E9018B90021C71E</string>
-											<string>FC19840B0E901A060021C71E</string>
 											<string>FC19840C0E901A060021C71E</string>
-											<string>FC19840D0E901A060021C71E</string>
-											<string>FC19840E0E901A060021C71E</string>
-											<string>FC19840F0E901A060021C71E</string>
-											<string>FC1984100E901A060021C71E</string>
-											<string>FC1984140E901B780021C71E</string>
-											<string>FC1984150E901B780021C71E</string>
-											<string>FC19841A0E901CE00021C71E</string>
-											<string>FC1984250E901F6A0021C71E</string>
-											<string>FC19842A0E9020140021C71E</string>
+											<string>FC1984DC0E904FF10021C71E</string>
+											<string>FC1984DE0E904FF10021C71E</string>
+											<string>FC1985190E9055000021C71E</string>
+											<string>FC1985390E90578B0021C71E</string>
+											<string>FC1985650E905D780021C71E</string>
+											<string>FC1985670E905D780021C71E</string>
+											<string>FC1985B90E9067150021C71E</string>
+											<string>FC1985BA0E9067150021C71E</string>
+											<string>FC1985BB0E9067150021C71E</string>
+											<string>FC1985BC0E9067150021C71E</string>
+											<string>FC1985BD0E9067150021C71E</string>
+											<string>FC1985BE0E9067150021C71E</string>
+											<string>FC1985C50E9067510021C71E</string>
+											<string>FC1985D20E9067860021C71E</string>
+											<string>FC1985D30E9067860021C71E</string>
+											<string>FC1985D40E9067860021C71E</string>
+											<string>FC1985D50E9067860021C71E</string>
+											<string>FC1985D60E9067860021C71E</string>
+											<string>FC1985D70E9067860021C71E</string>
+											<string>FC1985F00E9069370021C71E</string>
+											<string>FC1985F10E9069370021C71E</string>
+											<string>FC1985F20E9069370021C71E</string>
+											<string>FC1985F30E9069370021C71E</string>
+											<string>FC1985FE0E906A390021C71E</string>
+											<string>FC1985FF0E906A390021C71E</string>
+											<string>FC1986000E906A390021C71E</string>
+											<string>FC1986010E906A390021C71E</string>
+											<string>FC1986020E906A390021C71E</string>
+											<string>FC19861E0E906F280021C71E</string>
+											<string>FC19861F0E906F280021C71E</string>
+											<string>FC1986260E9070070021C71E</string>
+											<string>FC1986270E9070070021C71E</string>
+											<string>FC1986430E9074430021C71E</string>
+											<string>FC1986440E9074430021C71E</string>
+											<string>FC1986450E9074430021C71E</string>
+											<string>FC1986460E9074430021C71E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -400,14 +465,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {731, 476}}</string>
+								<string>{{0, 0}, {731, 475}}</string>
 								<key>RubberWindowFrame</key>
 								<string>88 118 1073 695 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>476pt</string>
+							<string>475pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -420,14 +485,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 481}, {731, 173}}</string>
+								<string>{{0, 480}, {731, 174}}</string>
 								<key>RubberWindowFrame</key>
 								<string>88 118 1073 695 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>173pt</string>
+							<string>174pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -446,9 +511,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FC1981880E9008FF0021C71E</string>
+				<string>FC1985C00E9067150021C71E</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FC1981890E9008FF0021C71E</string>
+				<string>FC1985C10E9067150021C71E</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -583,7 +648,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>FCB31A100E8FFC7B00D88232</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>FC1985D90E9067860021C71E</string>
 		<string>/Users/jon/src/SortByLogSizePlugin/SortByLogSizePlugin.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -666,7 +731,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FCB31A100E8FFC7B00D88232</string>
-				<string>FC1983CD0E9016AA0021C71E</string>
+				<string>FC1985B50E9066F60021C71E</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

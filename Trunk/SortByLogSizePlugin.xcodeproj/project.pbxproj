@@ -27,6 +27,7 @@
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		FC19835E0E900AF10021C71E /* AILogSizeSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILogSizeSort.h; sourceTree = "<group>"; };
 		FC19835F0E900AF10021C71E /* AILogSizeSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILogSizeSort.m; sourceTree = "<group>"; };
+		FC1985880E90600B0021C71E /* AILoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoggerPlugin.h; sourceTree = "<group>"; };
 		FCB319610E8FF7A200D88232 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adium.framework; sourceTree = "<group>"; };
 		FCB319620E8FF7A200D88232 /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AIUtilities.framework; sourceTree = "<group>"; };
 		FCB319630E8FF7A200D88232 /* FriBidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FriBidi.framework; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FC1985880E90600B0021C71E /* AILoggerPlugin.h */,
 				FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */,
 				FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */,
 				FC19835E0E900AF10021C71E /* AILogSizeSort.h */,
