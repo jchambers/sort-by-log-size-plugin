@@ -29,21 +29,28 @@
  */
 - (void)didBecomeActiveFirstTime
 {
+	logSizeCache = [NSMutableDictionary dictionaryWithCapacity:64];
+	
 	NSEnumerator *groupEnumerator = [[[[adium contactController] contactList] listContacts] objectEnumerator];
 	
 	id group, contact;
 	
     while(group = [groupEnumerator nextObject])
 	{
-		AILog(@"%@", group);
-		
 		NSEnumerator *contactEnumerator = [[group listContacts] objectEnumerator];
+		
+		NSMutableDictionary *sizes = [NSMutableDictionary dictionaryWithCapacity:64];
 		
 		while(contact = [contactEnumerator nextObject])
 		{
-			AILog(@"\t%@: %lld", contact, [AILogSizeSort getContactLogSize:contact]);
+			[sizes setValue:[NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:contact]] forKey:[contact UID]];
 		}
+
+		[logSizeCache setValue:sizes forKey:[group UID]];
     }
+	
+	AILog(@"Log size cache:");
+	AILog(@"%@", logSizeCache);
 }
 
 /*!
@@ -113,9 +120,6 @@
  */
 int logSizeSort(id objectA, id objectB, BOOL groups)
 {
-	// Not real excited about doing this with an implicit definition, but seems to be
-	// the only option for now.
-	//AILog([objectA formattedUID]);
 	return NSOrderedAscending;
 }
 
