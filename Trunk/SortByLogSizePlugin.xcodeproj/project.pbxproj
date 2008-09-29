@@ -239,12 +239,17 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SortByLogSizePlugin_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = SortByLogSizePlugin;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Release;
 		};

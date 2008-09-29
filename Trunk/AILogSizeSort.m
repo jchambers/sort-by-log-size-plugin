@@ -91,6 +91,14 @@
 {
 }
 
+/*!
+ * Allow users to manually sort groups.
+ */
+-(BOOL)canSortManually
+{
+	return YES;
+}
+
 /**
  * Returns the total aggregate log size for a contact.  For meta-contacts, the
  * total log file size of all sub-contacts is returned.  If no log exists or if
@@ -173,7 +181,7 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 	
 	if([sizeB compare:sizeA] == NSOrderedSame)
 	{
-		return [[objectA displayName] compare:[objectB displayName]];
+		return [[objectA displayName] caseInsensitiveCompare:[objectB displayName]];
 	}
 	else
 	{
