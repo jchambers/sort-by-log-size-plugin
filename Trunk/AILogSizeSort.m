@@ -16,7 +16,6 @@
 #import <Adium/ESDebugAILog.h>
 
 #import <Adium/AIContactControllerProtocol.h>
-#import <Adium/AIPreferenceControllerProtocol.h>
 #import <Adium/AIListObject.h>
 #import <Adium/AIMetaContact.h>
 
@@ -67,14 +66,14 @@
  * @result Localized title. If nil, the menu item will be disabled.
  */
 - (NSString *)configureSortWindowTitle{
-	return AILocalizedString(@"Configure Sort by Log Size",nil);	
+	return nil;
 }
 
 /*!
  * @brief Nib name for configuration
  */
 - (NSString *)configureNibName{
-	return @"LogSizeSortConfiguration";
+	return nil;
 }
 
 /*!
@@ -90,6 +89,63 @@
  */
 - (IBAction)changePreference:(id)sender
 {
+}
+
+/**
+ * Returns the total aggregate log size for a contact.  For meta-contacts, the
+ * total log file size of all sub-contacts is returned.  If no log exists or if
+ * something else goes wrong, 0 is returned.
+ *
+ * @param listObject an AIListContact for which to retrieve a total log file size
+ * @return the total log file size in bytes or 0 if an error occurred
+ */
++(unsigned long long)getContactLogSize:(AIListContact *)listObject
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	
+	if([listObject isMemberOfClass:[AIMetaContact class]])
+	{
+		// Recurse through all sub-contacts
+		
+		id contact;
+		unsigned long long size = 0;
+		
+		NSEnumerator *contactEnumerator = [[listObject listContacts] objectEnumerator];
+
+		while(contact = [contactEnumerator nextObject])
+		{
+			size += [AILogSizeSort getContactLogSize:contact];
+		}
+		
+		return size;
+	}
+	else
+	{
+		// Find the path to the directory containing the log files for this contact
+		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listObject UID] onAccount: [listObject account]]];
+		
+		// Grab an enumerator for all log files for this contact
+		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
+		NSString *file;
+		
+		unsigned long long size = 0;
+		
+		while(file = [dirEnum nextObject])
+		{
+			NSDictionary *fileAttributes = [fileManager fileAttributesAtPath:[path stringByAppendingPathComponent:file] traverseLink:YES];
+			
+			if (fileAttributes != nil)
+			{
+				NSNumber *fileSize;
+				if(fileSize = [fileAttributes objectForKey:NSFileSize])
+				{
+					size += [fileSize unsignedLongLongValue];
+				}
+			}
+		}
+		
+		return size;
+	}
 }
 
 #pragma mark Sorting
@@ -131,51 +187,4 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 - (sortfunc)sortFunction{
 	return &logSizeSort;
 }
-
-+(unsigned long long)getContactLogSize:(AIListContact *)listObject
-{
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-
-	if([listObject isMemberOfClass:[AIMetaContact class]])
-	{
-		unsigned long long size = 0;
-		
-		NSEnumerator *contactEnumerator = [[listObject listContacts] objectEnumerator];
-		
-		id contact;
-		
-		while(contact = [contactEnumerator nextObject])
-		{
-			size += [AILogSizeSort getContactLogSize:contact];
-		}
-		
-		return size;
-	}
-	else
-	{
-		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listObject UID] onAccount: [listObject account]]];
-
-		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
-		NSString *file;
-		
-		unsigned long long size = 0;
-		
-		while(file = [dirEnum nextObject])
-		{
-			NSDictionary *fileAttributes = [fileManager fileAttributesAtPath:[path stringByAppendingPathComponent:file] traverseLink:YES];
-
-			if (fileAttributes != nil)
-			{
-				NSNumber *fileSize;
-				if(fileSize = [fileAttributes objectForKey:NSFileSize])
-				{
-					size += [fileSize unsignedLongLongValue];
-				}
-			}
-		}
-		
-		return size;
-	}
-}
-
 @end
