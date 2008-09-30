@@ -174,19 +174,22 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 		}
 	}
 	
+	unsigned long long sizeA = [AILogSizeSort getContactLogSize:objectA];
+	unsigned long long sizeB = [AILogSizeSort getContactLogSize:objectB];
 	
-	NSNumber *sizeA = [NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:objectA]];
-	NSNumber *sizeB = [NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:objectB]];
-	
-	if([sizeB compare:sizeA] == NSOrderedSame)
+	if(sizeB == sizeA)
 	{
 		// Fall back to basic alphabetical sorting in the event of a tie.
 		return [[objectA displayName] caseInsensitiveCompare:[objectB displayName]];
 	}
-	else
+	else if(sizeA > sizeB)
 	{
 		// There's a clear winner; run with it.
-		return [sizeB compare:sizeA];
+		return NSOrderedAscending;
+	}
+	else
+	{
+		return NSOrderedDescending;
 	}
 }
 

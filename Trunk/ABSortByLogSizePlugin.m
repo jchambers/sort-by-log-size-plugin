@@ -40,7 +40,7 @@
 
 - (NSString *)pluginDescription
 {
-	return @"Allows the contact list to be sorted by transcript file size.";
+	return @"Allows the Adium contact list to be sorted by chat transcript file size.";
 }
 
 - (NSString *)pluginURL
