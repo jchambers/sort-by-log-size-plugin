@@ -31,6 +31,8 @@
 #import <Adium/AIListObject.h>
 #import <Adium/AIMetaContact.h>
 
+#import <Adium/ESDebugAILog.h>
+
 @implementation AILogSizeSort
 
 /*!
@@ -40,6 +42,9 @@
  */
 - (void)didBecomeActiveFirstTime
 {
+	AILog(@"Sort by log size controller became active for first time.");
+	logSizeCache = [[NSMutableDictionary alloc] init];
+	AILog(@"%@", logSizeCache);
 }
 
 /*!
@@ -104,33 +109,55 @@
 }
 
 /*!
- * Allow users to manually sort groups.
+ * @brief Allow users to manually sort groups
  */
 -(BOOL)canSortManually
 {
 	return YES;
 }
 
-/**
+-(unsigned long long)getCachedLogSize:(AIListContact *)listContact
+{
+	AILogWithSignature(@"Getting cached log size for %@/%@.", [[listContact account] explicitFormattedUID], [listContact UID]);
+	
+	if([logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] == nil)
+	{
+		[logSizeCache setValue:[[NSMutableDictionary alloc] init] forKey:[[listContact account] explicitFormattedUID]];
+	}
+	
+	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[[listContact account] explicitFormattedUID]];
+	
+	if([accountDictionary valueForKey:[listContact UID]] == nil)
+	{
+		AILogWithSignature(@"\tNo cache hit.");
+		[accountDictionary setValue:[NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:listContact]] forKey: [listContact UID]];
+	}
+	
+	AILogWithSignature(@"\tLog file size: %@", [accountDictionary valueForKey:[listContact UID]]);
+	return [[accountDictionary valueForKey:[listContact UID]] unsignedLongLongValue];
+}
+
+/*!
+ * @brief Returns the total aggregate log size for a contact
+ *
  * Returns the total aggregate log size for a contact.  For meta-contacts, the
  * total log file size of all sub-contacts is returned.  If no log exists or if
  * something else goes wrong, 0 is returned.
  *
- * @param listObject an AIListContact for which to retrieve a total log file size
+ * @param listContact an AIListContact for which to retrieve a total log file size
  * @return the total log file size in bytes or 0 if an error occurred
  */
-+(unsigned long long)getContactLogSize:(AIListContact *)listObject
++(unsigned long long)getContactLogSize:(AIListContact *)listContact
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
-	if([listObject isMemberOfClass:[AIMetaContact class]])
+	if([listContact isMemberOfClass:[AIMetaContact class]])
 	{
 		// Recurse through all sub-contacts
-		
 		id contact;
 		unsigned long long size = 0;
 		
-		NSEnumerator *contactEnumerator = [[listObject listContacts] objectEnumerator];
+		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact listContacts] objectEnumerator];
 
 		while(contact = [contactEnumerator nextObject])
 		{
@@ -142,7 +169,7 @@
 	else
 	{
 		// Find the path to the directory containing the log files for this contact
-		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listObject UID] onAccount: [listObject account]]];
+		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listContact UID] onAccount: [listContact account]]];
 		
 		// Grab an enumerator for all log files for this contact
 		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
@@ -170,7 +197,7 @@
 
 #pragma mark Sorting
 /*!
- * @brief Alphabetical sort
+ * @brief Sort by log size
  */
 int logSizeSort(id objectA, id objectB, BOOL groups)
 {
@@ -187,9 +214,24 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 		}
 	}
 	
-	unsigned long long sizeA = [AILogSizeSort getContactLogSize:objectA];
-	unsigned long long sizeB = [AILogSizeSort getContactLogSize:objectB];
+	// Get a reference to one and only AILogSizeSort instance.  If this sorting method is being
+	// called, it should always be the case that AILogSizeSort is the active sort controller.
+	AISortController *sortController = [[adium contactController] activeSortController];
 	
+	unsigned long long sizeA = 0;
+	unsigned long long sizeB = 0;
+	
+	if([sortController isMemberOfClass:[AILogSizeSort class]])
+	{
+		sizeA = [(AILogSizeSort *)sortController getCachedLogSize:objectA];
+		sizeB = [(AILogSizeSort *)sortController getCachedLogSize:objectB];
+	}
+	else
+	{
+		sizeA = [AILogSizeSort getContactLogSize:objectA];
+		sizeB = [AILogSizeSort getContactLogSize:objectB];
+	}
+
 	if(sizeB == sizeA)
 	{
 		// Fall back to basic alphabetical sorting in the event of a tie.

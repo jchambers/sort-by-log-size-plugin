@@ -26,8 +26,10 @@
 
 @interface AILogSizeSort : AISortController
 {
+	NSMutableDictionary *logSizeCache;
 }
 
-+(unsigned long long)getContactLogSize:(AIListContact *)listObject;
+-(unsigned long long)getCachedLogSize:(AIListContact *)listContact;
++(unsigned long long)getContactLogSize:(AIListContact *)listContact;
 
 @end
