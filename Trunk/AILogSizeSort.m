@@ -27,13 +27,19 @@
 #import <AIUtilities/AITigerCompatibility.h> 
 #import <AIUtilities/AIStringUtilities.h>
 
+#import <Adium/AIAdiumProtocol.h>
+#import <Adium/AIContentControllerProtocol.h>
 #import <Adium/AIContactControllerProtocol.h>
 #import <Adium/AIListObject.h>
 #import <Adium/AIMetaContact.h>
 
-#import <Adium/ESDebugAILog.h>
+#import <Adium/AIChat.h>
+#import <Adium/AIContentObject.h>
+#import <Adium/AIContentMessage.h>
 
 @implementation AILogSizeSort
+
+#pragma mark AISortController obligations
 
 /*!
  * @brief Did become active first time
@@ -42,9 +48,13 @@
  */
 - (void)didBecomeActiveFirstTime
 {
-	AILog(@"Sort by log size controller became active for first time.");
 	logSizeCache = [[NSMutableDictionary alloc] init];
-	AILog(@"%@", logSizeCache);
+	
+	// Listen for content addition notifications
+	[[adium notificationCenter] addObserver:self 
+								   selector:@selector(contentObjectAdded:) 
+									   name:Content_ContentObjectAdded 
+									 object:nil];
 }
 
 /*!
@@ -58,7 +68,7 @@
  * @brief Localized display name
  */
 - (NSString *)displayName{
-    return AILocalizedString(@"Sort Contacts by Log Size",nil);
+    return AILocalizedString(@"Sort Contacts by Log Size", nil);
 }
 
 /*!
@@ -76,6 +86,7 @@
 }
 
 #pragma mark Configuration
+
 /*!
  * @brief Window title when configuring the sort
  *
@@ -116,10 +127,14 @@
 	return YES;
 }
 
--(unsigned long long)getCachedLogSize:(AIListContact *)listContact
+#pragma mark Cache operations
+
+/*!
+ * @brief Creates and populates a new cache entry for a contact if needed
+ */
+-(void)createCacheEntryIfNil:(AIListContact *)listContact
 {
-	AILogWithSignature(@"Getting cached log size for %@/%@.", [[listContact account] explicitFormattedUID], [listContact UID]);
-	
+	// Check for a match on the account name; create a new sub-dictionary if needed
 	if([logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] == nil)
 	{
 		[logSizeCache setValue:[[NSMutableDictionary alloc] init] forKey:[[listContact account] explicitFormattedUID]];
@@ -127,13 +142,69 @@
 	
 	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[[listContact account] explicitFormattedUID]];
 	
+	// If we don't already have a valid log size cached for this contact, create one
 	if([accountDictionary valueForKey:[listContact UID]] == nil)
 	{
-		AILogWithSignature(@"\tNo cache hit.");
 		[accountDictionary setValue:[NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:listContact]] forKey: [listContact UID]];
 	}
+}
+
+/*!
+ * @brief Invalidates a cached log size for a list contact
+ */
+-(void)removeCacheEntry:(AIListContact *)listContact
+{
+	if([listContact isMemberOfClass:[AIMetaContact class]])
+	{
+		// Recurse!  Invalidate each sub-contact's cache entry.
+		id contact;
+		
+		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact listContacts] objectEnumerator];
+		
+		while(contact = [contactEnumerator nextObject])
+		{
+			[self removeCacheEntry:contact];
+		}
+	}
+	else
+	{
+		// Bail out if we don't know about the group this contact is in (there's nothing for us to do
+		// anyway).
+		if([logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] == nil) { return; }
+		
+		// Remove the cache entry for the dirty account.
+		[(NSMutableDictionary *)[logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] setValue:nil forKey:[listContact UID]];
+	}
+}
+
+#pragma mark Event handlers
+
+/*!
+ * @brief Handles content send/receive events
+ *
+ * Handles content send/receive events.  For one-on-one chats, the cached log size for a contact is
+ * invalidated (forcing a recalculation on the next sorting cycle).
+ */
+-(void)contentObjectAdded:(NSNotification *)notification
+{
+	AIChat *chat = [notification object];
 	
-	AILogWithSignature(@"\tLog file size: %@", [accountDictionary valueForKey:[listContact UID]]);
+	if(![chat isGroupChat])
+	{
+		[self removeCacheEntry:[chat listObject]];
+	}
+}
+
+#pragma mark Log operations
+
+/*!
+ * @brief Returns the cached log size for a list contact
+ */
+-(unsigned long long)getCachedLogSize:(AIListContact *)listContact
+{
+	[self createCacheEntryIfNil:listContact];
+	
+	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[[listContact account] explicitFormattedUID]];
 	return [[accountDictionary valueForKey:[listContact UID]] unsignedLongLongValue];
 }
 
@@ -196,6 +267,7 @@
 }
 
 #pragma mark Sorting
+
 /*!
  * @brief Sort by log size
  */
@@ -221,6 +293,8 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 	unsigned long long sizeA = 0;
 	unsigned long long sizeB = 0;
 	
+	// Attempt to use cached log sizes if possible, but fall back to dumber methods if something
+	// unforeseen happens.
 	if([sortController isMemberOfClass:[AILogSizeSort class]])
 	{
 		sizeA = [(AILogSizeSort *)sortController getCachedLogSize:objectA];

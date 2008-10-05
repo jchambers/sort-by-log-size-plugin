@@ -29,6 +29,14 @@
 	NSMutableDictionary *logSizeCache;
 }
 
+// Cache operations
+-(void)createCacheEntryIfNil:(AIListContact *)listContact;
+-(void)removeCacheEntry:(AIListContact *)listContact;
+
+// Event handlers
+-(void)contentObjectAdded:(NSNotification *)notification;
+
+// Log operations
 -(unsigned long long)getCachedLogSize:(AIListContact *)listContact;
 +(unsigned long long)getContactLogSize:(AIListContact *)listContact;
 
