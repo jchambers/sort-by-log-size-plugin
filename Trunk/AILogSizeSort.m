@@ -51,10 +51,10 @@
 	logSizeCache = [[NSMutableDictionary alloc] init];
 	
 	// Listen for content addition notifications
-	[[adium notificationCenter] addObserver:self 
-								   selector:@selector(contentObjectAdded:) 
-									   name:Content_ContentObjectAdded 
-									 object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(contentObjectAdded:) 
+												 name:Content_ContentObjectAdded 
+											   object:nil];
 }
 
 /*!
@@ -159,7 +159,7 @@
 		// Recurse!  Invalidate each sub-contact's cache entry.
 		id contact;
 		
-		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact listContacts] objectEnumerator];
+		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact uniqueContainedObjects] objectEnumerator];
 		
 		while(contact = [contactEnumerator nextObject])
 		{
@@ -228,7 +228,7 @@
 		id contact;
 		unsigned long long size = 0;
 		
-		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact listContacts] objectEnumerator];
+		NSEnumerator *contactEnumerator = [[(AIMetaContact *)listContact uniqueContainedObjects] objectEnumerator];
 
 		while(contact = [contactEnumerator nextObject])
 		{
@@ -271,12 +271,12 @@
 /*!
  * @brief Sort by log size
  */
-int logSizeSort(id objectA, id objectB, BOOL groups)
+NSComparisonResult logSizeSort(id objectA, id objectB, BOOL groups, id<AIContainingObject> container)
 {
 	if(groups)
 	{
 		// Keep groups in manual order (borrowed from ESStatusSort)
-		if ([objectA orderIndex] > [objectB orderIndex])
+		if ([container orderIndexForObject:objectA] > [container orderIndexForObject:objectB])
 		{
 			return NSOrderedDescending;
 		}
@@ -288,7 +288,7 @@ int logSizeSort(id objectA, id objectB, BOOL groups)
 	
 	// Get a reference to one and only AILogSizeSort instance.  If this sorting method is being
 	// called, it should always be the case that AILogSizeSort is the active sort controller.
-	AISortController *sortController = [[adium contactController] activeSortController];
+	AISortController *sortController = [AISortController activeSortController];
 	
 	unsigned long long sizeA = 0;
 	unsigned long long sizeB = 0;

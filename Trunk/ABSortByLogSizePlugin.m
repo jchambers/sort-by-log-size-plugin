@@ -29,7 +29,7 @@
 
 - (void)installPlugin
 {
-	[[adium contactController] registerListSortController:[[[AILogSizeSort alloc] init] autorelease]];
+	[AISortController registerSortController:[[[AILogSizeSort alloc] init] autorelease]];
 }
 
 - (void)uninstallPlugin 
