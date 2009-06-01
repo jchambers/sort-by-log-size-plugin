@@ -19,12 +19,9 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-#import "AILogSizeSort.h"
-#import "AILoggerPlugin.h"
-
+#import <Adium/AIPlugin.h>
 #import <Adium/AISharedAdium.h>
 
-#import <AIUtilities/AITigerCompatibility.h> 
 #import <AIUtilities/AIStringUtilities.h>
 
 #import <Adium/AIAdiumProtocol.h>
@@ -36,6 +33,9 @@
 #import <Adium/AIChat.h>
 #import <Adium/AIContentObject.h>
 #import <Adium/AIContentMessage.h>
+
+#import "AILogSizeSort.h"
+#import "AILoggerPlugin.h"
 
 @implementation AILogSizeSort
 

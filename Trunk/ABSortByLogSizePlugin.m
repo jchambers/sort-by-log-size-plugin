@@ -22,8 +22,6 @@
 #import "ABSortByLogSizePlugin.h"
 #import "AILogSizeSort.h"
 
-#import <AIUtilities/AITigerCompatibility.h> 
-
 #import <Adium/AISharedAdium.h>
 #import <Adium/AIContactControllerProtocol.h>
 
