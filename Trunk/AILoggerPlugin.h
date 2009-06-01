@@ -14,7 +14,6 @@
  * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-#import <Adium/AIPlugin.h>
 
 #define PATH_LOGS                       @"/Logs"
 #define LOGGING_DEFAULT_PREFS           @"LoggingDefaults"
@@ -45,6 +44,7 @@
     NSMenuItem                          *logViewerMenuItem;
     NSMenuItem                          *viewContactLogsMenuItem;
     NSMenuItem                          *viewContactLogsContextMenuItem;
+	NSMenuItem							*viewGroupLogsContextMenuItem;
 
     //Log content search index
 	BOOL				logIndexingEnabled; //Does this system use log indexing?
@@ -66,9 +66,9 @@
     NSLock				*dirtyLogLock;
     
     //Indexing progress
-    int					logsToIndex;
-    int					logsIndexed;
-	int					logIndexingPauses;
+    NSInteger					logsToIndex;
+    NSInteger					logsIndexed;
+	NSInteger					logIndexingPauses;
     
 }
 
@@ -80,6 +80,7 @@
 + (NSArray *)sortedArrayOfLogFilesForChat:(AIChat *)chat;
 
 //Log viewer
+- (void)showLogViewerAndReindex:(id)sender;
 - (void)showLogViewerToSelectedContact:(id)sender;
 - (void)showLogViewerToSelectedContextContact:(id)sender;
 
@@ -90,9 +91,8 @@
 - (SKIndexRef)logContentIndex;
 - (void)markLogDirtyAtPath:(NSString *)path forChat:(AIChat *)chat;
 - (void)markLogDirtyAtPath:(NSString *)path;
-- (BOOL)getIndexingProgress:(int *)complete outOf:(int *)total;
+- (BOOL)getIndexingProgress:(NSUInteger *)complete outOf:(NSUInteger *)total;
 
-//
 - (void)stopIndexingThreads;
 - (void)dirtyAllLogs;
 - (void)cleanDirtyLogs;
