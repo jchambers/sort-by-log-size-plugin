@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		FC1983600E900AF10021C71E /* AILogSizeSort.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19835F0E900AF10021C71E /* AILogSizeSort.m */; };
 		FC22EC220FD36AAD00754E18 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC200FD36AAD00754E18 /* Adium.framework */; };
 		FC22EC230FD36AAD00754E18 /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC210FD36AAD00754E18 /* AIUtilities.framework */; };
 		FC22EC270FD36ACF00754E18 /* FriBidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC260FD36ACF00754E18 /* FriBidi.framework */; };
+		FC2CD0D40FD4A09E009FD00C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC2CD0D30FD4A09E009FD00C /* Localizable.strings */; };
 		FCB319740E8FF80C00D88232 /* ABSortByLogSizePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF630370AF2F00C91783 /* SortByLogSizePlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortByLogSizePlugin_Prefix.pch; sourceTree = "<group>"; };
@@ -31,8 +30,14 @@
 		FC22EC200FD36AAD00754E18 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = "../adium-1.4/build/Debug/Adium.framework"; sourceTree = SOURCE_ROOT; };
 		FC22EC210FD36AAD00754E18 /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AIUtilities.framework; path = "../adium-1.4/build/Debug/AIUtilities.framework"; sourceTree = SOURCE_ROOT; };
 		FC22EC260FD36ACF00754E18 /* FriBidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FriBidi.framework; path = "../adium-1.4/build/Debug/FriBidi.framework"; sourceTree = SOURCE_ROOT; };
+		FC2CD0D50FD4A0AF009FD00C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSortByLogSizePlugin.h; sourceTree = "<group>"; };
 		FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSortByLogSizePlugin.m; sourceTree = "<group>"; };
+		FCDC9E790FD4B9F300B2F353 /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCDC9E7A0FD4BA0B00B2F353 /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCDC9E7B0FD4BA1700B2F353 /* is */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = is; path = is.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCDC9E7E0FD4BA7100B2F353 /* sv */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCDC9E7F0FD4BA8600B2F353 /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				8D5B49B7048680CD000E48DA /* Info.plist */,
-				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				FC2CD0D30FD4A09E009FD00C /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -158,6 +163,18 @@
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "SortByLogSizePlugin" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+				fr,
+				de,
+				es,
+				is,
+				sv,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* SortByLogSizePlugin */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -172,7 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				FC2CD0D40FD4A09E009FD00C /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +208,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+		FC2CD0D30FD4A09E009FD00C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C167EFE841241C02AAC07 /* English */,
+				FCDC9E7F0FD4BA8600B2F353 /* de */,
+				FC2CD0D50FD4A0AF009FD00C /* en */,
+				FCDC9E790FD4B9F300B2F353 /* es */,
+				FCDC9E7A0FD4BA0B00B2F353 /* fr */,
+				FCDC9E7B0FD4BA1700B2F353 /* is */,
+				FCDC9E7E0FD4BA7100B2F353 /* sv */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

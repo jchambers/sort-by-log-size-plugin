@@ -24,6 +24,7 @@
 
 #import <Adium/AISharedAdium.h>
 #import <Adium/AIContactControllerProtocol.h>
+#import <AIUtilities/AIStringUtilities.h>
 
 @implementation ABSortByLogSizePlugin
 
@@ -43,12 +44,12 @@
 
 - (NSString *)pluginVersion
 {
-	return @"1.1";
+	return @"1.2";
 }
 
 - (NSString *)pluginDescription
 {
-	return @"Allows the Adium contact list to be sorted by chat transcript file size.";
+	return AILocalizedString(@"Allows the Adium contact list to be sorted by chat transcript file size.", nil);
 }
 
 - (NSString *)pluginURL
