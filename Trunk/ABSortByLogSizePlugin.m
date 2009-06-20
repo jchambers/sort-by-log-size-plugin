@@ -44,7 +44,7 @@
 
 - (NSString *)pluginVersion
 {
-	return @"1.2";
+	return @"1.2.1";
 }
 
 - (NSString *)pluginDescription

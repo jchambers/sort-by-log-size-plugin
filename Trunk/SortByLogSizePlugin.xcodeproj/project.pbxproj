@@ -248,6 +248,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = SortByLogSizePlugin;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Debug;
@@ -273,6 +274,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = SortByLogSizePlugin;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = AdiumPlugin;
 			};
 			name = Release;

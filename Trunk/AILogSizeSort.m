@@ -273,7 +273,11 @@
  */
 NSComparisonResult logSizeSort(id objectA, id objectB, BOOL groups, id<AIContainingObject> container)
 {
-	if(groups)
+	// Borrowed from AISortController.m
+	BOOL objectAIsGroup = [objectA isKindOfClass:[AIListGroup class]];
+	BOOL objectBIsGroup = [objectB isKindOfClass:[AIListGroup class]];
+	
+	if(groups || (objectAIsGroup && objectBIsGroup))
 	{
 		// Keep groups in manual order (borrowed from ESStatusSort)
 		if ([container orderIndexForObject:objectA] > [container orderIndexForObject:objectB])
@@ -284,6 +288,16 @@ NSComparisonResult logSizeSort(id objectA, id objectB, BOOL groups, id<AIContain
 		{
 			return NSOrderedAscending;
 		}
+	}
+	
+	// Catch cases where only one of the objects is a group
+	if(objectAIsGroup && !objectBIsGroup)
+	{
+		return NSOrderedAscending;
+	}
+	else if(!objectAIsGroup && objectBIsGroup)
+	{
+		return NSOrderedDescending;
 	}
 	
 	// Get a reference to one and only AILogSizeSort instance.  If this sorting method is being
