@@ -36,6 +36,6 @@
 
 // Log operations
 -(unsigned long long)getCachedLogSize:(AIListContact *)listContact;
-+(unsigned long long)getContactLogSize:(AIListContact *)listContact;
+-(unsigned long long)getContactLogSize:(AIListContact *)listContact;
 
 @end
