@@ -173,7 +173,7 @@
 		if([logSizeCache valueForKey:[listContact internalUniqueObjectID]] == nil) { return; }
 		
 		// Remove the cache entry for the dirty account.
-		[(NSMutableDictionary *)[logSizeCache valueForKey:[listContact internalUniqueObjectID]] setValue:nil forKey:[listContact UID]];
+		[(NSMutableDictionary *)[logSizeCache valueForKey:[listContact internalUniqueObjectID]] removeObjectForKey:[listContact UID]];
 	}
 }
 
