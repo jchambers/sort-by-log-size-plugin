@@ -135,12 +135,12 @@
 -(void)createCacheEntryIfNil:(AIListContact *)listContact
 {
 	// Check for a match on the account name; create a new sub-dictionary if needed
-	if([logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] == nil)
+	if([logSizeCache valueForKey:[listContact internalUniqueObjectID]] == nil)
 	{
-		[logSizeCache setValue:[[NSMutableDictionary alloc] init] forKey:[[listContact account] explicitFormattedUID]];
+		[logSizeCache setValue:[[NSMutableDictionary alloc] init] forKey:[listContact internalUniqueObjectID]];
 	}
 	
-	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[[listContact account] explicitFormattedUID]];
+	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[listContact internalUniqueObjectID]];
 	
 	// If we don't already have a valid log size cached for this contact, create one
 	if([accountDictionary valueForKey:[listContact UID]] == nil)
@@ -170,10 +170,10 @@
 	{
 		// Bail out if we don't know about the group this contact is in (there's nothing for us to do
 		// anyway).
-		if([logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] == nil) { return; }
+		if([logSizeCache valueForKey:[listContact internalUniqueObjectID]] == nil) { return; }
 		
 		// Remove the cache entry for the dirty account.
-		[(NSMutableDictionary *)[logSizeCache valueForKey:[[listContact account] explicitFormattedUID]] setValue:nil forKey:[listContact UID]];
+		[(NSMutableDictionary *)[logSizeCache valueForKey:[listContact internalUniqueObjectID]] setValue:nil forKey:[listContact UID]];
 	}
 }
 
@@ -204,7 +204,7 @@
 {
 	[self createCacheEntryIfNil:listContact];
 	
-	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[[listContact account] explicitFormattedUID]];
+	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[listContact internalUniqueObjectID]];
 	return [[accountDictionary valueForKey:[listContact UID]] unsignedLongLongValue];
 }
 
