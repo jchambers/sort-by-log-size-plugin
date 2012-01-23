@@ -145,7 +145,7 @@
 	// If we don't already have a valid log size cached for this contact, create one
 	if([accountDictionary valueForKey:[listContact UID]] == nil)
 	{
-		[accountDictionary setValue:[NSNumber numberWithUnsignedLongLong:[AILogSizeSort getContactLogSize:listContact]] forKey: [listContact UID]];
+		[accountDictionary setValue:[NSNumber numberWithUnsignedLongLong:[self getContactLogSize:listContact]] forKey: [listContact UID]];
 	}
 }
 
@@ -202,6 +202,12 @@
  */
 -(unsigned long long)getCachedLogSize:(AIListContact *)listContact
 {
+	// Don't cache metacontacts
+	if([listContact isMemberOfClass:[AIMetaContact class]])
+	{
+		return [self getContactLogSize:listContact];
+	}
+
 	[self createCacheEntryIfNil:listContact];
 	
 	NSMutableDictionary *accountDictionary = [logSizeCache valueForKey:[listContact internalUniqueObjectID]];
@@ -218,7 +224,7 @@
  * @param listContact an AIListContact for which to retrieve a total log file size
  * @return the total log file size in bytes or 0 if an error occurred
  */
-+(unsigned long long)getContactLogSize:(AIListContact *)listContact
+-(unsigned long long)getContactLogSize:(AIListContact *)listContact
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
@@ -232,7 +238,7 @@
 
 		while(contact = [contactEnumerator nextObject])
 		{
-			size += [AILogSizeSort getContactLogSize:contact];
+			size += [self getCachedLogSize:contact];
 		}
 		
 		return size;
@@ -307,18 +313,8 @@ NSComparisonResult logSizeSort(id objectA, id objectB, BOOL groups, id<AIContain
 	unsigned long long sizeA = 0;
 	unsigned long long sizeB = 0;
 	
-	// Attempt to use cached log sizes if possible, but fall back to dumber methods if something
-	// unforeseen happens.
-	if([sortController isMemberOfClass:[AILogSizeSort class]])
-	{
-		sizeA = [(AILogSizeSort *)sortController getCachedLogSize:objectA];
-		sizeB = [(AILogSizeSort *)sortController getCachedLogSize:objectB];
-	}
-	else
-	{
-		sizeA = [AILogSizeSort getContactLogSize:objectA];
-		sizeB = [AILogSizeSort getContactLogSize:objectB];
-	}
+	sizeA = [(AILogSizeSort *)sortController getCachedLogSize:objectA];
+	sizeB = [(AILogSizeSort *)sortController getCachedLogSize:objectB];
 
 	if(sizeB == sizeA)
 	{
