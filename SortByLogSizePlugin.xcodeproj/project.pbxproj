@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		FC1983600E900AF10021C71E /* AILogSizeSort.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19835F0E900AF10021C71E /* AILogSizeSort.m */; };
-		FC22EC220FD36AAD00754E18 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC200FD36AAD00754E18 /* Adium.framework */; };
-		FC22EC230FD36AAD00754E18 /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC210FD36AAD00754E18 /* AIUtilities.framework */; };
-		FC22EC270FD36ACF00754E18 /* FriBidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC22EC260FD36ACF00754E18 /* FriBidi.framework */; };
 		FC2CD0D40FD4A09E009FD00C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC2CD0D30FD4A09E009FD00C /* Localizable.strings */; };
+		FCAC75E4151E24E70028A6C8 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAC75E1151E24E70028A6C8 /* Adium.framework */; };
+		FCAC75E5151E24E70028A6C8 /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAC75E2151E24E70028A6C8 /* AIUtilities.framework */; };
+		FCAC75E6151E24E70028A6C8 /* FriBidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAC75E3151E24E70028A6C8 /* FriBidi.framework */; };
 		FCB319740E8FF80C00D88232 /* ABSortByLogSizePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */; };
 /* End PBXBuildFile section */
 
@@ -26,11 +26,10 @@
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		FC19835E0E900AF10021C71E /* AILogSizeSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILogSizeSort.h; sourceTree = "<group>"; };
 		FC19835F0E900AF10021C71E /* AILogSizeSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILogSizeSort.m; sourceTree = "<group>"; };
-		FC1985880E90600B0021C71E /* AILoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoggerPlugin.h; sourceTree = "<group>"; };
-		FC22EC200FD36AAD00754E18 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = "../adium-1.4/build/Debug/Adium.framework"; sourceTree = SOURCE_ROOT; };
-		FC22EC210FD36AAD00754E18 /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AIUtilities.framework; path = "../adium-1.4/build/Debug/AIUtilities.framework"; sourceTree = SOURCE_ROOT; };
-		FC22EC260FD36ACF00754E18 /* FriBidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FriBidi.framework; path = "../adium-1.4/build/Debug/FriBidi.framework"; sourceTree = SOURCE_ROOT; };
 		FC2CD0D50FD4A0AF009FD00C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCAC75E1151E24E70028A6C8 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adium.framework; sourceTree = "<group>"; };
+		FCAC75E2151E24E70028A6C8 /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AIUtilities.framework; sourceTree = "<group>"; };
+		FCAC75E3151E24E70028A6C8 /* FriBidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FriBidi.framework; sourceTree = "<group>"; };
 		FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABSortByLogSizePlugin.h; sourceTree = "<group>"; };
 		FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABSortByLogSizePlugin.m; sourceTree = "<group>"; };
 		FCDC9E790FD4B9F300B2F353 /* es */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -46,9 +45,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				FC22EC220FD36AAD00754E18 /* Adium.framework in Frameworks */,
-				FC22EC230FD36AAD00754E18 /* AIUtilities.framework in Frameworks */,
-				FC22EC270FD36ACF00754E18 /* FriBidi.framework in Frameworks */,
+				FCAC75E4151E24E70028A6C8 /* Adium.framework in Frameworks */,
+				FCAC75E5151E24E70028A6C8 /* AIUtilities.framework in Frameworks */,
+				FCAC75E6151E24E70028A6C8 /* FriBidi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +69,7 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				FC22EC260FD36ACF00754E18 /* FriBidi.framework */,
-				FC22EC200FD36AAD00754E18 /* Adium.framework */,
-				FC22EC210FD36AAD00754E18 /* AIUtilities.framework */,
+				FCAC75E0151E24D30028A6C8 /* Adium Frameworks */,
 				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
 				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
 			);
@@ -91,7 +88,6 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FC1985880E90600B0021C71E /* AILoggerPlugin.h */,
 				FCB319720E8FF80C00D88232 /* ABSortByLogSizePlugin.h */,
 				FCB319730E8FF80C00D88232 /* ABSortByLogSizePlugin.m */,
 				FC19835E0E900AF10021C71E /* AILogSizeSort.h */,
@@ -132,6 +128,16 @@
 				32DBCF630370AF2F00C91783 /* SortByLogSizePlugin_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		FCAC75E0151E24D30028A6C8 /* Adium Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCAC75E1151E24E70028A6C8 /* Adium.framework */,
+				FCAC75E2151E24E70028A6C8 /* AIUtilities.framework */,
+				FCAC75E3151E24E70028A6C8 /* FriBidi.framework */,
+			);
+			name = "Adium Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +242,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../adium-1.4/build/Debug\"",
+					"\"$(SRCROOT)/../adium/DerivedData/Adium/Build/Products/Debug\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -264,7 +271,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../adium-1.4/build/Debug\"",
+					"\"$(SRCROOT)/../adium/DerivedData/Adium/Build/Products/Debug\"",
+					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -290,7 +298,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx10.6;
 			};
 			name = Debug;
