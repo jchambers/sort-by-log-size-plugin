@@ -1,11 +1,9 @@
 /* 
- * $Id$
- *
  * Adium is the legal property of its developers, whose names are listed in the copyright file included
  * with this source distribution.
  *
- * This plugin is copyright (c) 2008 Jon Chambers.  The plugin's official site is:
- * http://projects.eatthepath.com/sort-by-log-size-plugin/
+ * This plugin is copyright (c) 2008-2012 Jon Chambers.  The plugin's official site is:
+ * https://github.com/jchambers/sort-by-log-size-plugin/
  * 
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
  * General Public License as published by the Free Software Foundation; either version 2 of the License,
