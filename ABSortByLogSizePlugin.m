@@ -44,7 +44,7 @@
 
 - (NSString *)pluginVersion
 {
-	return @"1.2.1";
+	return @"1.3";
 }
 
 - (NSString *)pluginDescription
@@ -54,7 +54,7 @@
 
 - (NSString *)pluginURL
 {
-	return @"http://projects.eatthepath.com/sort-by-log-size-plugin/";
+	return @"https://github.com/jchambers/sort-by-log-size-plugin";
 }
 
 @end
