@@ -35,7 +35,6 @@
 #import <Adium/AIContentMessage.h>
 
 #import "AILogSizeSort.h"
-#import "AILoggerPlugin.h"
 
 @implementation AILogSizeSort
 
@@ -246,7 +245,7 @@
 	else
 	{
 		// Find the path to the directory containing the log files for this contact
-		NSString *path = [[AILoggerPlugin logBasePath] stringByAppendingPathComponent:[AILoggerPlugin relativePathForLogWithObject:[listContact UID] onAccount: [listContact account]]];
+		NSString *path = [[NSClassFromString(@"AILoggerPlugin") logBasePath] stringByAppendingPathComponent:[NSClassFromString(@"AILoggerPlugin") relativePathForLogWithObject:[listContact UID] onAccount: [listContact account]]];
 		
 		// Grab an enumerator for all log files for this contact
 		NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
